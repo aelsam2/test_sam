@@ -6,20 +6,23 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import config.PropertyFile;
+import utils.Common;
 
 public class WebDrive {
 	WebDriver driver;
   PropertyFile prop = new PropertyFile();
+  Common com = new Common();
   
 
 	public 	WebDriver com (String url) throws IOException
     { 
 		
 		String browser =prop.browser();
+		String projPath=com.projectPath();
 		switch (browser) 
 		{
 		case "chrome" :{
-    	System.setProperty("webdriver.chrome.driver", "C:\\Users\\Aelsam\\eclipse-workspace\\CI\\Driver\\chromedriver.exe");
+    	System.setProperty("webdriver.chrome.driver", projPath+"\\Driver\\chromedriver.exe");
         driver=new ChromeDriver();
     	driver.get(url);
     	driver.manage().window().maximize();		
@@ -27,7 +30,7 @@ public class WebDrive {
 		break;
 		
 		case "firefox":{
-    	System.setProperty("webdriver.chrome.driver", "C:\\Users\\Aelsameclipse-workspace\\CI\\Driver\\chromedriver.exe");
+    	System.setProperty("webdriver.chrome.driver", projPath+"\\Driver\\chromedriver.exe");
         driver=new ChromeDriver();
     	driver.get(url);
     	driver.manage().window().maximize();

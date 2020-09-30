@@ -22,13 +22,12 @@ public class Login {
 	PropertyFile prop =new PropertyFile();
 	WebDrive ob =new WebDrive();
   @Test
-  public void login() throws InterruptedException {
+  public void login(String email, String password) throws InterruptedException {
 	  loginPageElems= new LoginPageElem(driver);
 	  homePageElems= new HomePageElem(driver);
 	  homePageElems.loginButtonInHomePage.click();
 	  Thread.sleep(10000);
 	  ArrayList<String> newTab = new ArrayList<String>(driver.getWindowHandles());
-	   System.out.println(newTab.get(1) + "wwcwcw");
 	    driver.switchTo().window(newTab.get(1));
 	  loginPageElems.emailField.sendKeys("aelsam2@gmail.com");
 	  loginPageElems.passwordField.sendKeys("Ael199710*");
