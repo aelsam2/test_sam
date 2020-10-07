@@ -25,4 +25,13 @@ public WebElement reCaptcha;
 
 @FindBy(id="login")
 public WebElement loginButtonInLoginPage;
+
+@FindBy(xpath="//*[@id=\"header\"]/div/ul/li[3]/a")
+public WebElement registerButton;
+
+@FindBy(xpath="//*[@id=\"inputFirstName\"]")
+public WebElement firstName;
+
+@FindBy(xpath="//*[@id=\"inputLastName\"]")
+public WebElement lastName;
 }
